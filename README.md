@@ -83,7 +83,7 @@ Rscript notebooks/analysis.R
 
 ## 👤 Autor
 
-**Andrés Giraldo Ramírez (Midas)**
+**Andrés Giraldo Ramírez**
 Software Engineer en transición hacia Data Analytics / ML / Data Engineering
 GitHub: [@giralrez](https://github.com/giralrez)
 
