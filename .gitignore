@@ -1,10 +1,4 @@
-# PDFs
+﻿QVI_data_2.csv
 *.pdf
-
-# Virtual environment
-.venv/
-
-# Python
-__pycache__/
-*.pyc
-*.pyo
+*.html
+*.csv
