@@ -46,12 +46,7 @@ Este proyecto responde a una solicitud de análisis para respaldar con datos una
 └── requirements.txt / DESCRIPTION
 ```
 
-## Cómo ejecutar
-
-### 1. Instalar dependencias
-```bash
-pip install -r requirements.txt
-```
+## Stack técnico
 
 - **R** (dplyr, ggplot2, data.table) — análisis principal
 - **Python** (pandas, matplotlib/seaborn) — análisis complementario
@@ -112,33 +107,119 @@ Además de las visualizaciones estáticas, el proyecto incluye un dashboard inte
 | **Tendencia** | Evolución mensual de ventas, unidades y clientes |
 | **Trial** | Evaluación tiendas 77, 86, 88 vs. control (233, 155, 237) |
 
-## 📊 Hallazgos iniciales
+## 🏁 Conclusiones finales del proyecto
 
-### 4. Dashboard interactivo
-```bash
-python dashboard/quantium_dashboard.py
-```
-Acceder a http://127.0.0.1:8050
+### Respuesta a la pregunta central
 
-## Métricas del informe
+¿Qué segmentos de clientes impulsan las ventas de chips y cómo puede la categoría capitalizar ese comportamiento?
 
-### KPIs Principales
-- Ventas Totales
-- Unidades Totales
-- Clientes Únicos
-- Ticket Promedio
-- Precio Promedio por Unidad
+### 1. Segmentos que impulsan las ventas
 
-### Análisis por Segmento
-- 12 segmentos LIFESTAGE × PREMIUM_CUSTOMER
-- Participación en ventas por segmento
-- Ticket promedio por segmento
+| Segmento | Ventas ($) | Participación | Ticket promedio | Frecuencia |
+|---|---|---|---|---|
+| OLDER FAMILIES - Budget | $156,863.75 | 8.69% | $7.36 | 4.62 |
+| YOUNG SINGLES/COUPLES - Mainstream | $147,582.20 | 8.18% | $7.58 | 2.46 |
+| RETIREES - Mainstream | $145,168.95 | 8.04% | $7.30 | 3.13 |
+| YOUNG FAMILIES - Budget | $129,717.95 | 7.19% | $7.36 | 4.46 |
+| OLDER SINGLES/COUPLES - Budget | $127,833.60 | 7.08% | $7.49 | 3.52 |
+
+Los 5 segmentos representan el **39.2%** del total de ventas (**$1.8M**).
+
+### 2. Perfil del cliente típico
+
+| Característica | Valor |
+|---|---|
+| Ticket promedio | $7.36 |
+| Precio promedio por unidad | $3.84 |
+| Unidades por transacción | 1.92 |
+| Frecuencia promedio | 3.44 transacciones/cliente |
+
+### 3. Marcas con mayor afinidad
+
+| Marca | Índice de afinidad | Participación |
+|---|---|---|
+| TYRRELLS | 1.24 | 3.17% |
+| TWISTIES | 1.22 | 4.60% |
+| DORITOS | 1.21 | 12.17% |
+| TOSTITOS | 1.21 | 4.55% |
+| KETTLE | 1.19 | 19.67% |
+
+> Un índice > 1 indica que el segmento objetivo (Mainstream Young Singles/Couples) compra más esta marca que el promedio.
+
+### 4. Tamaños de paquete preferidos
+
+| Tamaño | Índice de afinidad | Participación |
+|---|---|---|
+| 270g | 1.27 | 3.17% |
+| 380g | 1.26 | 3.20% |
+| 330g | 1.22 | 6.11% |
+| 134g | 1.18 | 11.85% |
+| 210g | 1.18 | 2.95% |
+
+Los empaques grandes (270g-380g) tienen la mayor afinidad entre los clientes Mainstream Young Singles/Couples.
+
+### Recomendaciones estratégicas
+
+**Para el segmento Mainstream Young Singles/Couples (8.18% de ventas):**
+
+1. **Surtido de productos**
+   - Priorizar marcas premium: TYRRELLS, KETTLE, DORITOS.
+   - Enfocar en empaques grandes (270g-380g).
+   - Mantener precio premium (disposición a pagar: $4.07/unidad vs. $3.84 promedio).
+2. **Promociones**
+   - Descuentos por volumen en empaques grandes.
+   - Promociones cruzadas con bebidas (complemento natural).
+   - Programas de fidelización para aumentar frecuencia (actualmente 2.46 vs. 3.44 promedio).
+3. **Ubicación en tienda**
+   - Secciones de conveniencia y checkout.
+   - Exhibidores cerca de bebidas y snacks.
+
+**Para el segmento Familias (Budget/Premium) (25% de ventas combinado):**
+
+1. **Surtido de productos**
+   - Enfocar en marcas valor: SMITHS, PRINGLES, RRD.
+   - Empaques familiares (330g-380g).
+   - Precios competitivos.
+2. **Promociones**
+   - Descuentos por cantidad (compra familiar).
+   - Packs combinados de variedades.
+   - Cupones para próxima compra.
+3. **Estrategia de fidelización**
+   - Este segmento tiene la mayor frecuencia (4.4-4.7 transacciones).
+   - Programas de recompensas por lealtad.
+
+### Evaluación del trial
+
+| Tienda | Tipo | Resultado |
+|---|---|---|
+| Tienda 77 (vs. Control 233) | Incremento significativo en VENTAS | Trial exitoso |
+| Tienda 86 (vs. Control 155) | Incremento significativo en CLIENTES | Trial exitoso |
+| Tienda 88 (vs. Control 237) | Incremento significativo en AMBAS métricas | Trial más exitoso |
+
+**Recomendación:** continuar con el rollout de la estrategia de trial basada en los resultados positivos.
+
+### Resumen ejecutivo
+
+| Pregunta | Respuesta |
+|---|---|
+| ¿Quién compra chips? | Principalmente OLDER FAMILIES (Budget) y YOUNG SINGLES/COUPLES (Mainstream) |
+| ¿Cuánto gastan? | $7.36 promedio por transacción, $3.84 por unidad |
+| ¿Qué compran? | Marcas premium (TYRRELLS, KETTLE) en empaques grandes (270g-380g) |
+| ¿Cómo capitalizar? | Enfocar surtido premium en Young Singles/Couples, valor en Familias, y expandir el trial exitoso |
+
+### Impacto del proyecto
+
+- **Datos procesados:** 246,741 transacciones, 71,287 clientes únicos.
+- **Período analizado:** julio 2018 - junio 2019.
+- **Ventas totales:** $1,805,177.70.
+- **Outputs generados:** 7 CSV para Power BI, 10 visualizaciones PNG, 1 dashboard interactivo.
 
 ## 🚀 Cómo ejecutar el proyecto
 
-### Tamaño de Paquete
-- Distribución de ventas por tamaño
-- Índice de afinidad por tamaño
+```bash
+# Clonar el repositorio
+git clone https://github.com/giralrez/<nombre-del-repo>.git
+cd <nombre-del-repo>
 
 # Instalar dependencias
 pip install -r requirements.txt
@@ -193,10 +274,10 @@ Acceder a [`http://127.0.0.1:8050`](http://127.0.0.1:8050).
 
 ## 👤 Autor
 
-**Andrés Gidaldo Ramírez**
+**Andrés Giraldo Ramírez**
 Software Engineer | Data Analytics / ML / Data Engineering
 GitHub: [@giralrez](https://github.com/giralrez)
 
 ---
 
-*Este análisis forma parte de un ejercicio de estudio de caso del Quantium Virtual Internship.*
+*Este análisis forma parte de un ejercicio de estudio de caso del Quantium Virtual Internship - Retail Strategy and Analytics.*
