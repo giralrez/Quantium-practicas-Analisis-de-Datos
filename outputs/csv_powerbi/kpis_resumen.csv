@@ -1,0 +1,9 @@
+﻿Metrica,Valor,Descripcion
+Ventas Totales ($),1805177.7,Suma de todas las ventas en el período
+Unidades Totales,470399.0,Total de unidades de chips vendidas
+Clientes Únicos,71287.0,Número de clientes únicos con tarjeta de fidelidad
+Transacciones Totales,245255.0,Número total de transacciones realizadas
+Ticket Promedio ($),7.360411408533975,Promedio de gasto por transacción
+Precio Promedio por Unidad ($),3.837545785599034,Precio promedio por unidad de chip
+Frecuencia Promedio (transacciones/cliente),3.4403888507020914,Promedio de transacciones por cliente
+Chips Promedio por Transacción,1.9179996330350044,Promedio de unidades por transacción

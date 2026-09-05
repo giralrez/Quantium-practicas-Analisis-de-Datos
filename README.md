@@ -1,22 +1,14 @@
-# 🥔 Análisis de Segmentos de Clientes y Comportamiento de Compra de Chips
+# Análisis de Categoría Chips - Quantium
 
 Análisis de datos de transacciones y comportamiento de clientes para la categoría de **chips**, desarrollado como base de una recomendación estratégica para la revisión de categoría solicitada por la Gerencia Comercial.
 
-## 📋 Contexto del proyecto
+## Contexto del proyecto
 
-Este proyecto responde a una solicitud de análisis para respaldar con datos una recomendación estratégica sobre la categoría de chips. El objetivo es comprender las tendencias y comportamientos de compra actuales, identificando **quién compra chips**, **cuánto gasta** y **qué unidades consume** según distintos segmentos de clientes, con el fin de traducir estos hallazgos en una estrategia de negocio accionable.
+Este proyecto responde a una solicitud de análisis para respaldar con datos una recomendación estratégica sobre la categoría de chips. El objetivo es comprender las tendencias y comportamientos de compra actuales, identificando **quién compra chips**, **cuánto gasta** y **qué unidades consume** según distintos segmentos de clientes.
 
 **Pregunta de negocio central:** ¿Qué segmentos de clientes impulsan las ventas de chips y cómo puede la categoría capitalizar ese comportamiento?
 
-## 🎯 Objetivos
-
-- Realizar limpieza y validación de los datos (formatos, valores atípicos, consistencia).
-- Enriquecer el dataset con características derivadas (marca, tamaño de paquete, segmento de cliente).
-- Definir métricas clave para describir el comportamiento de compra por segmento.
-- Generar insights con aplicación comercial directa.
-- Traducir los hallazgos en una recomendación estratégica clara y respaldada por datos.
-
-## 🗂️ Estructura del repositorio
+## Estructura del proyecto
 
 ```
 ├── data/
@@ -54,28 +46,12 @@ Este proyecto responde a una solicitud de análisis para respaldar con datos una
 └── requirements.txt / DESCRIPTION
 ```
 
-## 🔍 Metodología
+## Cómo ejecutar
 
-1. **Chequeo de calidad de datos**
-   - Resúmenes estadísticos de alto nivel (summary, glimpse, describe).
-   - Detección y tratamiento de valores atípicos.
-   - Validación y corrección de formatos (fechas, tipos de dato, unidades).
-
-2. **Ingeniería de características**
-   - Extracción de marca y tamaño de paquete a partir del nombre del producto.
-   - Clasificación de clientes por segmentos (vida, edad, nivel de ingreso, etc. según dataset).
-
-3. **Definición de métricas**
-   - Gasto total y promedio por segmento.
-   - Unidades compradas por transacción/segmento.
-   - Frecuencia de compra.
-   - Marca y tamaño de paquete preferido por segmento.
-
-4. **Análisis y visualización**
-   - Comparación de comportamiento entre segmentos.
-   - Identificación de segmentos de alto valor y oportunidades de crecimiento.
-
-## 🛠️ Stack técnico
+### 1. Instalar dependencias
+```bash
+pip install -r requirements.txt
+```
 
 - **R** (dplyr, ggplot2, data.table) — análisis principal
 - **Python** (pandas, matplotlib/seaborn) — análisis complementario
@@ -138,22 +114,31 @@ Además de las visualizaciones estáticas, el proyecto incluye un dashboard inte
 
 ## 📊 Hallazgos iniciales
 
-> *Sección en construcción — se actualizará con los insights obtenidos tras el análisis exploratorio y de segmentación.*
+### 4. Dashboard interactivo
+```bash
+python dashboard/quantium_dashboard.py
+```
+Acceder a http://127.0.0.1:8050
 
-- Segmento(s) con mayor gasto total: _pendiente_
-- Segmento(s) con mayor volumen de unidades: _pendiente_
-- Marcas y tamaños de paquete preferidos por segmento: _pendiente_
+## Métricas del informe
 
-## 💡 Recomendación estratégica preliminar
+### KPIs Principales
+- Ventas Totales
+- Unidades Totales
+- Clientes Únicos
+- Ticket Promedio
+- Precio Promedio por Unidad
 
-> *Se documentará una vez consolidados los hallazgos, enfocada en acciones concretas para la revisión de categoría (mix de producto, pricing, promociones dirigidas por segmento).*
+### Análisis por Segmento
+- 12 segmentos LIFESTAGE × PREMIUM_CUSTOMER
+- Participación en ventas por segmento
+- Ticket promedio por segmento
 
 ## 🚀 Cómo ejecutar el proyecto
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/giralrez/<nombre-del-repo>.git
-cd <nombre-del-repo>
+### Tamaño de Paquete
+- Distribución de ventas por tamaño
+- Índice de afinidad por tamaño
 
 # Instalar dependencias
 pip install -r requirements.txt
@@ -208,10 +193,10 @@ Acceder a [`http://127.0.0.1:8050`](http://127.0.0.1:8050).
 
 ## 👤 Autor
 
-**Andrés Giraldo Ramírez**
-Software Engineer en transición hacia Data Analytics / ML / Data Engineering
+**Andrés Gidaldo Ramírez**
+Software Engineer | Data Analytics / ML / Data Engineering
 GitHub: [@giralrez](https://github.com/giralrez)
 
 ---
 
-*Este análisis forma parte de un ejercicio de estudio de caso abierto orientado a la práctica de habilidades de análisis de datos aplicadas a un contexto de negocio real.*
+*Este análisis forma parte de un ejercicio de estudio de caso del Quantium Virtual Internship.*
