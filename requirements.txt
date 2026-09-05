@@ -4,3 +4,7 @@ matplotlib
 seaborn
 scipy
 openpyxl
+plotly
+dash
+dash-bootstrap-components
+kaleido
