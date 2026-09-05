@@ -24,13 +24,13 @@ def load_data():
     base_path = Path(__file__).parent.parent
     
     # Cargar datos principales
-    df = pd.read_csv(base_path / 'QVI_data.csv')
+    df = pd.read_csv(base_path / 'data' / 'raw' / 'QVI_data.csv')
     df['DATE'] = pd.to_datetime(df['DATE'])
     df['YEARMONTH'] = df['DATE'].dt.year * 100 + df['DATE'].dt.month
     df['Fecha'] = pd.to_datetime(df['YEARMONTH'].astype(str), format='%Y%m')
     
     # Cargar datos de trial
-    df2 = pd.read_csv(base_path / 'QVI_data_2.csv')
+    df2 = pd.read_csv(base_path / 'data' / 'raw' / 'QVI_data_2.csv')
     df2['DATE'] = pd.to_datetime(df2['DATE'])
     df2['YEARMONTH'] = df2['DATE'].dt.year * 100 + df2['DATE'].dt.month
     df2['Fecha'] = pd.to_datetime(df2['YEARMONTH'].astype(str), format='%Y%m')

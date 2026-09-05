@@ -252,7 +252,7 @@ def main():
     """Función principal que ejecuta todas las exportaciones."""
     # Configurar rutas
     base_path = Path(__file__).parent.parent
-    data_file = base_path / 'QVI_data.csv'
+    data_file = base_path / 'data' / 'raw' / 'QVI_data.csv'
     output_dir = base_path / 'outputs' / 'csv_powerbi'
     
     # Crear directorio de salida si no existe
@@ -295,7 +295,7 @@ def main():
     # 7. Evaluación de Trial
     print("Calculando evaluación de trial...")
     # Usar QVI_data_2.csv para evaluación de trial (tiene más información)
-    data2_file = base_path / 'QVI_data_2.csv'
+    data2_file = base_path / 'data' / 'raw' / 'QVI_data_2.csv'
     if data2_file.exists():
         df2 = pd.read_csv(data2_file)
         df2['DATE'] = pd.to_datetime(df2['DATE'])
